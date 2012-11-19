@@ -5,9 +5,13 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'jquery-rails'
 gem 'pg'
 gem 'devise'
 gem 'haml'
+gem 'lastfm'
+gem 'songkickr', git: 'git://github.com/daveknapik/songkickr.git'
+gem 'rockstar'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,16 +27,16 @@ group :assets do
 end
 
 group :test do
-	gem 'cucumber'
+	gem 'cucumber-rails', require: false
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
+  gem "database_cleaner"
+  gem "timecop"
 end
 
 group :development do
 	gem 'haml-rails'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
