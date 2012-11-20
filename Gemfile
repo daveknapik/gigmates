@@ -31,13 +31,22 @@ group :test do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
   gem "database_cleaner"
-  gem "timecop"
+  gem 'timecop'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
 	gem 'haml-rails'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'rb-fsevent', '~> 0.9.1'
 end
 
+group :test, :development do
+  gem 'pry'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

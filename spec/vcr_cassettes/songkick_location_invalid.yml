@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.songkick.com/api/3.0/search/locations.json?apikey=OekMwH7kwA1GP6lb&query=Agrestic,%20California
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 Nov 2012 05:26:57 GMT
+      Server:
+      - thin 1.2.4 codename Flaming Astroboy
+      Content-Type:
+      - application/json
+      Expires:
+      - Tue, 20 Nov 2012 06:26:57 GMT
+      Cache-Control:
+      - private, max-age=3600
+      Vary:
+      - Accept-Encoding
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '{"resultsPage":{"results":{},"totalEntries":0,"perPage":50,"page":1,"status":"ok"}}'
+    http_version: 
+  recorded_at: Tue, 20 Nov 2012 05:26:57 GMT
+recorded_with: VCR 2.3.0
