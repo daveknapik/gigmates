@@ -3,13 +3,16 @@ rvm:
   - 1.9.3
 before_script:
   - psql -c 'create database gigmates_test;' -U postgres
-script: 
+script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
   - bundle exec cucumber
 env:
-  - DB=postgresql
+  matrix:
+    - DB=postgresql
+  global:
+    secure: SBhxGB/VIlWJq2R7B8Whj5aJK+BS2dWekCd2Sg1FQIINIxmuYTJHsK/mXd0klWLE7iUufUAUr/edNSnMi6UzxCpv0LQPSj/gSs0CztC/GP7bFppF7ZN9fP5nmlqJp+yx3S5wj/EYtP0Rm7pC1fdum7WlvGqZxxkrhSde9p47mmo=
 notifications:
   recipients:
     - dave@daveknapik.com
