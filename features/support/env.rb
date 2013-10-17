@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -15,6 +16,9 @@ Spork.prefork do
 	# files.
 
 	require 'cucumber/rails'
+  require 'webmock/cucumber'
+
+  WebMock.allow_net_connect!(:net_http_connect_on_start => true)
 
 	# Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 	# order to ease the transition to Capybara we set the default here. If you'd
@@ -66,6 +70,7 @@ Spork.prefork do
 	# The :transaction strategy is faster, but might give you threading problems.
 	# See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 	Cucumber::Rails::Database.javascript_strategy = :truncation
+	World(FactoryGirl::Syntax::Methods)
 end
 
 Spork.each_run do

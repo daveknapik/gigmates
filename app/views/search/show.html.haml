@@ -1,0 +1,9 @@
+.row
+	.span12
+		%h2 Search
+		= form_tag "/search", method: :get, remote: true, 'data-type' => :json, class: "form-horizontal", id: "search-form" do
+			.control-group
+				= select_tag(:type, options_for_select({"By Location" => "location", "By Artist" => "artist"}), class: "control-label")
+				.controls
+					= text_field_tag :term
+					= submit_tag "Search", class: "btn btn-primary", disable_with: "Searching..."

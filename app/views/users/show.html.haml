@@ -1,5 +1,5 @@
 .row
-	.span10.offset2
-		%h1 Users#show
-		%p= current_user.email if @user == current_user
-		%p= link_to 'Sign out', destroy_user_session_path, :method => :delete
+  .span10.offset2
+    %h1 Users#show
+    %p= current_user.email if @user == current_user
+    %p= link_to 'Sign out', destroy_user_session_path, :method => :delete

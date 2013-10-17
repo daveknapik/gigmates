@@ -47,6 +47,10 @@ end
     # the seed, which is printed after each run.
     #     --seed 1234
     config.order = "random"
+
+    config.include Rails.application.routes.url_helpers
+    config.include Devise::TestHelpers, :type => :controller
+    config.include FactoryGirl::Syntax::Methods
   end
 end
 

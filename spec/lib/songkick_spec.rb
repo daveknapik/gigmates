@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Songkick do
 	describe "#get_location_for" do
 		context "valid location" do
-			subject { Songkick.get_location_for("Brooklyn, NY") }
+			subject { Songkick.get_location("Brooklyn, NY") }
 
 			it "should return a Songkickr::Location" do
 				VCR.use_cassette("songkick_location_valid") { subject.should be_a Songkickr::Location }
@@ -11,7 +11,7 @@ describe Songkick do
 		end
 
 		context "invalid location" do
-			subject { Songkick.get_location_for("Agrestic, California") }
+			subject { Songkick.get_location("Agrestic, California") }
 
 			it "should return nil" do
 				VCR.use_cassette("songkick_location_invalid") { subject.should be_nil }
@@ -21,7 +21,7 @@ describe Songkick do
 
 	describe "#get_metro_area_for" do
 		context "valid location" do
-			subject { Songkick.get_metro_area_for("Brooklyn, NY") }
+			subject { Songkick.get_metro_area("Brooklyn, NY") }
 
 			it "should return a hash" do
 				VCR.use_cassette("songkick_location_valid") { subject.should be_a Hash }
@@ -29,7 +29,7 @@ describe Songkick do
 		end
 
 		context "invalid location" do
-			subject { Songkick.get_metro_area_for("Agrestic, California") }
+			subject { Songkick.get_metro_area("Agrestic, California") }
 
 			it "should return nil" do
 				VCR.use_cassette("songkick_location_invalid") { subject.should be_nil }

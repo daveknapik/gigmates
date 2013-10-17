@@ -10,8 +10,9 @@ gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'lastfm'
-gem 'songkickr', git: 'git://github.com/daveknapik/songkickr.git'
+gem 'songkickr'#, git: 'git://github.com/daveknapik/songkickr.git'
 gem 'rockstar'
+gem 'will_paginate', '~> 3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,9 +28,10 @@ group :assets do
 end
 
 group :test do
-	gem 'cucumber-rails', require: false
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
+  gem 'rake'
+  gem 'cucumber-rails', require: false
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem "database_cleaner"
   gem 'timecop'
   gem 'webmock'

@@ -1,9 +1,13 @@
 Gigmates::Application.routes.draw do
+  match "search", to: "search#show", as: :search
+
   devise_for :users
 
   resources :users, only: :show
 
-  root to: "users#show"
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
   
 
   # The priority is based upon order of creation:
