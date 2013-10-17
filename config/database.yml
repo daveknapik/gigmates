@@ -16,7 +16,7 @@ development:
 test: &test
   adapter: postgresql
   database: gigmates_test
-  username: daveknapik
+  username: postgres
   password:
   host: localhost
 
